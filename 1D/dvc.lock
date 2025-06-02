@@ -1,0 +1,33 @@
+schema: '2.0'
+stages:
+  download-1D:
+    cmd: bash get_1D.sh
+    deps:
+    - path: get_1D.sh
+      hash: md5
+      md5: 96db6f7798d578214c3bd29c31a50680
+      size: 162
+    outs:
+    - path: raw
+      hash: md5
+      md5: 1f54a9995e381d6a4dc43c8a984de51e.dir
+      size: 7432050
+      nfiles: 1
+  decompress-1D:
+    cmd: bash bunzip2.sh
+    deps:
+    - path: bunzip2.sh
+      hash: md5
+      md5: 88b8285dabb222373d7b9e2c561d2985
+      size: 78
+    - path: raw
+      hash: md5
+      md5: d751713988987e9331980363e24189ce.dir
+      size: 0
+      nfiles: 0
+    outs:
+    - path: interim
+      hash: md5
+      md5: 22cfb6152b3b32219b46a1d0d2037a32.dir
+      size: 45663738
+      nfiles: 1
