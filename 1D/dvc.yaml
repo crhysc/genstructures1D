@@ -1,0 +1,41 @@
+stages:
+  download-1D:
+    cmd: bash get_1D.sh
+    deps:
+    - get_1D.sh
+    outs:
+    - raw
+  decompress-1D:
+    cmd: bash bunzip2.sh
+    deps:
+    - bunzip2.sh
+    - raw
+    outs:
+    - interim
+  preprocess_agpt:
+    cmd: bash preprocess_agpt.sh
+    deps:
+    - interim
+    - preprocess_agpt.sh
+    outs:
+    - processed_agpt
+  preprocess_cdvae:
+    cmd: bash preprocess_cdvae.sh
+    deps:
+    - interim
+    - preprocess_cdvae.sh
+    outs:
+    - processed_cdvae
+  preprocess_flowmm:
+    cmd: bash preprocess_flowmm.sh
+    deps:
+    - interim
+    - preprocess_flowmm.sh
+    outs:
+    - processed_flowmm
+  mv_data:
+    cmd: bash mv_data.sh
+    deps:
+    - processed_agpt
+    - processed_cdvae
+    - processed_flowmm
