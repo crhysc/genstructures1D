@@ -1,5 +1,4 @@
 #!/bin/bash
 set -e
-mkdir processed_agpt
-conda init
+mkdir -p processed_agpt
 pip install numpy
