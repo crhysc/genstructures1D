@@ -1,7 +1,7 @@
 {
-    "id_prop_path":"/lab/mml/kipp/677/jarvis/rhys/benchmarks/tc_supercon/agpt_tc_supercon/id_prop.csv",
+    "id_prop_path":"/lab/mml/kipp/677/jarvis/rhys/genstructures1D/1D/agpt_1D/id_prop.csv",
     "prefix": "atomgpt_run",
-    "model_name": "knc6/atomgpt_mistral_tc_supercon",
+    "model_name": "???",
     "batch_size": 2,
     "num_epochs": 2,
     "logging_steps": 1,
@@ -17,7 +17,7 @@
     "loss_type": "default",
     "optim": "adamw_8bit",
     "lr_scheduler_type": "linear",
-    "output_dir": "/lab/mml/kipp/677/jarvis/rhys/benchmarks/job_runs/agpt_benchmark/saved",
+    "output_dir": "/lab/mml/kipp/677/jarvis/rhys/genstructures1D/job_runs/agpt_gen/saved",
     "csv_out": "AI-AtomGen-prop-dft_3d-test-rmse.csv",
     "chem_info": "formula",
     "max_seq_length": 2048,

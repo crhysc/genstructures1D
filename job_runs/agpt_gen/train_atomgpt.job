@@ -1,7 +1,7 @@
 #!/bin/bash
 
-#SBATCH --job-name=agpt_tc            
-#SBATCH --output=/lab/mml/kipp/677/jarvis/rhys/benchmarks/job_runs/agpt_benchmark/fl_studio.out
+#SBATCH --job-name=agpt_1D            
+#SBATCH --output=/lab/mml/kipp/677/jarvis/rhys/genstructures1D/job_runs/agpt_gen/fl_studio.out
 #SBATCH --partition=batch
 #SBATCH --nodes=1                         
 #SBATCH --gres=gpu:1
@@ -15,5 +15,5 @@ source /home/crc8/miniconda3/etc/profile.d/conda.sh
 conda activate my_atomgpt
 nvidia-smi
 
-python /lab/mml/kipp/677/jarvis/rhys/benchmarks/models/atomgpt/atomgpt/inverse_models/inverse_models.py \
-    --config_name /lab/mml/kipp/677/jarvis/rhys/benchmarks/job_runs/agpt_benchmark/config.json
+python /lab/mml/kipp/677/jarvis/rhys/genstructures1D/models/atomgpt/atomgpt/inverse_models/inverse_models.py \
+    --config_name /lab/mml/kipp/677/jarvis/rhys/genstructures1D/job_runs/agpt_gen/config.json
