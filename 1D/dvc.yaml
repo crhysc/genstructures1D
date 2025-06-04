@@ -12,30 +12,25 @@ stages:
     - raw
     outs:
     - interim
-  preprocess_agpt:
-    cmd: bash preprocess_agpt.sh
+  agpt:
+    cmd: bash agpt.sh
     deps:
     - interim
-    - preprocess_agpt.sh
+    - agpt.sh
     outs:
     - processed_agpt
-  preprocess_cdvae:
-    cmd: bash preprocess_cdvae.sh
+  cdvae:
+    cmd: cdvae.sh
     deps:
     - interim
-    - preprocess_cdvae.sh
+    - cdvae.sh
     outs:
     - processed_cdvae
-  preprocess_flowmm:
-    cmd: bash preprocess_flowmm.sh
+  flowmm:
+    cmd: bash flowmm.sh
     deps:
     - interim
-    - preprocess_flowmm.sh
+    - flowmm.sh
     outs:
     - processed_flowmm
-  mv_data:
-    cmd: bash mv_data.sh
-    deps:
-    - processed_agpt
-    - processed_cdvae
-    - processed_flowmm
+
