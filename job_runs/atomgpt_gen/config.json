@@ -1,7 +1,7 @@
 {
     "id_prop_path":"/lab/mml/kipp/677/jarvis/rhys/genstructures1D/1D/atomgpt_ehull/id_prop.csv",
     "prefix": "atomgpt_run",
-    "model_name": "???",
+    "model_name": "unsloth/mistral-7b-bnb-4bit",
     "batch_size": 2,
     "num_epochs": 2,
     "logging_steps": 1,
