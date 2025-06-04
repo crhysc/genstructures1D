@@ -64,3 +64,46 @@ stages:
       md5: 22cfb6152b3b32219b46a1d0d2037a32.dir
       size: 45663738
       nfiles: 1
+  atomgpt:
+    cmd: bash scripts/atomgpt.sh
+    deps:
+    - path: interim
+      hash: md5
+      md5: 22cfb6152b3b32219b46a1d0d2037a32.dir
+      size: 45663738
+      nfiles: 1
+    - path: scripts/atomgpt.sh
+      hash: md5
+      md5: 087d8465f01c7c0ffaf39470afedf8a1
+      size: 214
+      isexec: true
+    outs:
+    - path: atomgpt_ehull
+      hash: md5
+      md5: ac570921658d149a12f4a7878e5a6ba8.dir
+      size: 10607059
+      nfiles: 13296
+  cdvae:
+    cmd: scripts/cdvae.sh
+    deps:
+    - path: interim
+      hash: md5
+      md5: 22cfb6152b3b32219b46a1d0d2037a32.dir
+      size: 45663738
+      nfiles: 1
+    - path: scripts/cdvae.sh
+      hash: md5
+      md5: 52b71689785d9bda3404a80d6a64e5ee
+      size: 707
+      isexec: true
+    outs:
+    - path: ../models/cdvae/conf/data/supercon.yaml
+      hash: md5
+      md5: 4bbe8823ca3c632678edbfcb587f32e2
+      size: 2359
+      isexec: true
+    - path: ../models/cdvae/data/supercon
+      hash: md5
+      md5: 79553e539ed6451337bcd0753d305981.dir
+      size: 14491996
+      nfiles: 3
