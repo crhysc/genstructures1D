@@ -1,11 +1,11 @@
 stages:
-  download-1D:
+  download:
     cmd: bash get_1D.sh
     deps:
     - get_1D.sh
     outs:
     - raw
-  decompress-1D:
+  decompress:
     cmd: bash bunzip2.sh
     deps:
     - bunzip2.sh
