@@ -1,36 +1,29 @@
 stages:
   download:
-    cmd: bash get_1D.sh
+    cmd: bash scripts/download.sh
     deps:
-    - get_1D.sh
+    - scripts/download.sh
     outs:
     - raw
   decompress:
-    cmd: bash bunzip2.sh
+    cmd: bash scripts/decompress.sh
     deps:
-    - bunzip2.sh
+    - scripts/decompress.sh
     - raw
     outs:
     - interim
-  agpt:
-    cmd: bash agpt.sh
+  atomgpt:
+    cmd: bash scripts/atomgpt.sh
     deps:
     - interim
-    - agpt.sh
+    - scripts/atomgpt.sh
     outs:
-    - processed_agpt
+    - atomgpt_ehull
   cdvae:
-    cmd: cdvae.sh
+    cmd: scripts/cdvae.sh
     deps:
     - interim
-    - cdvae.sh
+    - scripts/cdvae.sh
     outs:
-    - processed_cdvae
-  flowmm:
-    cmd: bash flowmm.sh
-    deps:
-    - interim
-    - flowmm.sh
-    outs:
-    - processed_flowmm
+    - cdvae_ehull
 

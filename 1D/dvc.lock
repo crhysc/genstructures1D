@@ -31,3 +31,36 @@ stages:
       md5: 22cfb6152b3b32219b46a1d0d2037a32.dir
       size: 45663738
       nfiles: 1
+  download:
+    cmd: bash scripts/download.sh
+    deps:
+    - path: scripts/download.sh
+      hash: md5
+      md5: 96261ff9fcb7b85e6cefea5fd9b9d5b1
+      size: 155
+      isexec: true
+    outs:
+    - path: raw
+      hash: md5
+      md5: 1f54a9995e381d6a4dc43c8a984de51e.dir
+      size: 7432050
+      nfiles: 1
+  decompress:
+    cmd: bash scripts/decompress.sh
+    deps:
+    - path: raw
+      hash: md5
+      md5: 1f54a9995e381d6a4dc43c8a984de51e.dir
+      size: 7432050
+      nfiles: 1
+    - path: scripts/decompress.sh
+      hash: md5
+      md5: 6f75d2640e7d80818ef076da373aadfe
+      size: 77
+      isexec: true
+    outs:
+    - path: interim
+      hash: md5
+      md5: 22cfb6152b3b32219b46a1d0d2037a32.dir
+      size: 45663738
+      nfiles: 1
