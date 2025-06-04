@@ -25,5 +25,8 @@ stages:
     - interim
     - scripts/cdvae.sh
     outs:
-    - cdvae_ehull
+      - ../models/cdvae/data/supercon:
+          cache: false      
+      - ../models/cdvae/conf/data/supercon.yaml:
+          cache: false
 
