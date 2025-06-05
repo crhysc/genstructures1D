@@ -1,5 +1,7 @@
 [tool.ruff]
 line-length = 88
+show-source = true
+show-fixes = true
 
 exclude = [
   "models/",
