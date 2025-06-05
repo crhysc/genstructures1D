@@ -5,4 +5,6 @@ show-fixes = true
 
 exclude = [
   "models/",
+  "1D/atomgpt_ehull",
+  "job_runs"
 ]
