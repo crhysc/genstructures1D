@@ -1,0 +1,15 @@
+#!/bin/bash
+
+#SBATCH --job-name=cdvae_tc            
+#SBATCH --output=/lab/mml/kipp/677/jarvis/rhys/benchmarks/job_runs/cdvae_benchmark/fl_studio.out
+#SBATCH --partition=batch
+#SBATCH --nodes=1                         
+#SBATCH --ntasks-per-node=4                # Run 4 tasks (processes) on the node
+#SBATCH --cpus-per-task=4                  # 2 CPU cores per task (for multi‐threaded code)
+#SBATCH --time=08:00:00                    # Max walltime (HH:MM:SS)
+#SBATCH --mem=8G                           # Total RAM for the job (8 GB)
+
+source /home/crc8/miniconda3/etc/profile.d/conda.sh
+
+cd /lab/mml/kipp/677/jarvis/rhys/benchmarks/models/cdvae
+conda env create -f env.yml
